@@ -307,5 +307,4 @@ public class ConvertisseurController implements Initializable {
 		txtU2.setText(String.format("%.4f", res));// Mettre le resultat dans txtU2, avec 4 chiffres apres le decimal.
 	}
 
-
 }
