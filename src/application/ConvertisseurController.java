@@ -104,13 +104,13 @@ public class ConvertisseurController implements Initializable {
 										// ComboBox sur l'onglet pour convertir longueur
 
 	// Les facteurs de conversion pour chaque unite.
-	double[] MOfacteur = { 1, 1 / 0.75, 1 / 0.69, 1 / 84.28 };// Pour la monnaie
+	double[] MOfacteur = { 1, 1.33333, 1.449275, 1.1865e-2 };// Pour la monnaie
 	double[] Mfacteur = { 1, 1e3, 1e6, 9.8421e10, 1.1023e9, 2.2046e6, 3.5274e5 };// Pour la masse
 	double[] Qfacteur = { 1, 6.02e23, 6.02e20, 6.02e14, 6.02e11 };// Pour les quantites de matiere
-	double[] Tfacteur = { 1, 0.001, 1.6667e-5, 2.7778e-7, 1.1574e-8, 3.171e-11 };// Pour le temps
-	double[] Lfacteur = { 1 / 1, 1 / 0.1, 1 / 0.001, 1 / 1e-6, 1 / 0.00109361, 1 / 0.00328084, 1 / 6.2137e-7 };// Pour
-																												// la
-																												// longueur
+	double[] Tfacteur = { 1, 1e-3, 1.6667e-5, 2.7778e-7, 1.1574e-8, 3.171e-11 };// Pour le temps
+	double[] Lfacteur = { 1, 10, 1e3, 1e6, 9.144027578e2, 3.048e2, 1 / 1.609347088e6 };// Pour
+																						// la
+																						// longueur
 
 	/**
 	 * Methode qui ferme le convertisseur
@@ -307,25 +307,5 @@ public class ConvertisseurController implements Initializable {
 		txtU2.setText(String.format("%.4f", res));// Mettre le resultat dans txtU2, avec 4 chiffres apres le decimal.
 	}
 
-	/**
-	 * Meme que Convertir
-	 * 
-	 * @param txtU1   Meme que Convertir
-	 * @param txtU2   Meme que Convertir
-	 * @param cboU1   Meme que Convertir
-	 * @param cboU2   Meme que Convertir
-	 * @param facteur Meme que Convertir
-	 */
-
-	public void ConvertirMatiere(TextField txtU1, TextField txtU2, ComboBox cboU1, ComboBox cboU2, double facteur[]) {
-		// Tout est le meme que Convertir, sauf le dernier ligne
-		verifier(txtU1);
-		int item1 = cboU1.getSelectionModel().getSelectedIndex();
-		int item2 = cboU2.getSelectionModel().getSelectedIndex();
-		double taux = facteur[item1] / facteur[item2];
-		double res = taux * (Double.parseDouble(txtU1.getText()));
-		txtU2.setText(String.valueOf(res)); // Ici, on met la valeur dans txtU2, mais en notation scientifique (plus
-											// efficace pour les quantites de matiere).
-	}
 
 }
