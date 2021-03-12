@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConvertisseurController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Bienvenue">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="89.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue au convertisseur des unites !" textAlignment="CENTER" wrappingWidth="421.6708984375">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#00000079" layoutX="120.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliquer sur les onglets ci-dessus pour choisir un unite, et entrer la valeur a convertir !" textAlignment="CENTER" wrappingWidth="369.53515625">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="BbtnQuitter" layoutX="470.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Longueur">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="LcboU1" layoutX="86.0" layoutY="182.0" onAction="#LU1U2" prefWidth="150.0" />
+                              <ComboBox fx:id="LcboU2" layoutX="366.0" layoutY="182.0" onAction="#LU2U1" prefWidth="150.0" />
+                              <TextField fx:id="LtxtU1" layoutX="67.0" layoutY="120.0" onKeyReleased="#LU1U2" text="0" />
+                              <TextField fx:id="LtxtU2" layoutX="347.0" layoutY="120.0" onKeyReleased="#LU2U1" text="0" />
+                              <Text layoutX="203.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur d'unites de longueur" textAlignment="CENTER" wrappingWidth="212.6708984375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="LbtnQuitter" layoutX="470.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Masse">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="203.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur d'unites de masse" textAlignment="CENTER" wrappingWidth="212.6708984375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="MtxtU2" layoutX="347.0" layoutY="120.0" onKeyReleased="#MU2U1" text="0" />
+                              <TextField fx:id="MtxtU1" layoutX="67.0" layoutY="120.0" onKeyReleased="#MU1U2" text="0" />
+                              <ComboBox fx:id="McboU2" layoutX="366.0" layoutY="182.0" onAction="#MU2U1" prefWidth="150.0" />
+                              <ComboBox fx:id="McboU1" layoutX="86.0" layoutY="182.0" onAction="#MU1U2" prefWidth="150.0" />
+                              <Button fx:id="MbtnQuitter" layoutX="470.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Monnaie">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="203.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur d'unites de monnaie" textAlignment="CENTER" wrappingWidth="212.6708984375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="MOtxtU2" layoutX="347.0" layoutY="120.0" onKeyReleased="#MOU2U1" text="0" />
+                              <TextField fx:id="MOtxtU1" layoutX="67.0" layoutY="120.0" onKeyReleased="#MOU1U2" text="0" />
+                              <ComboBox fx:id="MOcboU2" layoutX="366.0" layoutY="182.0" onAction="#MOU2U1" prefWidth="150.0" />
+                              <ComboBox fx:id="MOcboU1" layoutX="86.0" layoutY="182.0" onAction="#MOU1U2" prefWidth="150.0" />
+                              <Button fx:id="MObtnQuitter" layoutX="470.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Temps">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="203.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur d'unites de temps" textAlignment="CENTER" wrappingWidth="212.6708984375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="TtxtU2" layoutX="347.0" layoutY="120.0" onKeyReleased="#TU2U1" text="0" />
+                              <TextField fx:id="TtxtU1" layoutX="67.0" layoutY="120.0" onKeyReleased="#TU1U2" text="0" />
+                              <ComboBox fx:id="TcboU2" layoutX="366.0" layoutY="182.0" onAction="#TU2U1" prefWidth="150.0" />
+                              <ComboBox fx:id="TcboU1" layoutX="86.0" layoutY="182.0" onAction="#TU1U2" prefWidth="150.0" />
+                              <Button fx:id="TbtnQuitter" layoutX="469.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Quantite de Matiere">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="QcboU1" layoutX="86.0" layoutY="182.0" onAction="#QU1U2" prefWidth="150.0" />
+                              <ComboBox fx:id="QcboU2" layoutX="366.0" layoutY="182.0" onAction="#QU2U1" prefWidth="150.0" />
+                              <TextField fx:id="QtxtU1" layoutX="67.0" layoutY="120.0" onKeyReleased="#QU1U2" text="0" />
+                              <TextField fx:id="QtxtU2" layoutX="347.0" layoutY="120.0" onKeyReleased="#QU2U1" text="0" />
+                              <Text layoutX="203.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur d'unites de quantite de matiere" textAlignment="CENTER" wrappingWidth="212.6708984375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="QbtnQuitter" layoutX="469.0" layoutY="291.0" mnemonicParsing="false" onAction="#fermer" text="Quitter" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
